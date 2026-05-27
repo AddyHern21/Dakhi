@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAKHI | Manual de Usuario Formal</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter (Estilo InfiniteYay) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Importación de Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-dakhi" data-bs-offset="100">
+
+    <!-- 
+    NAVBAR TRANSPARENTE:
+    - fixed-top: Posiciona la barra sobre el header (Hero).
+    - bg-transparent: Elimina el color de fondo inicial.
+    - navbar-dark: Ajusta los textos para que sean legibles sobre fondos oscuros.
+    -->
+    <nav id="navbar-dakhi" class="navbar navbar-expand-lg fixed-top bg-transparent navbar-dark">  <!-- navbar-dark: se genera el efecto de iluminacion -->
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="dakhi.html"> <!-- la clase navbar-brand: Es la clase del "Logo" o "Marca" -->
+                <img src="Imagenes\logoSVG.svg" 
+                    alt="Logo DAKHI" 
+                    width="50" 
+                    height="30" 
+                    class="d-inline-block align-center me-2 logo-brand">
+                DAKHI
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase small fw-bold">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li> 
+                    <!-- navbar-link: Son enlaces de navegación estándar. Bootstrap diseñó la clase navbar-dark específicamente para que estos cambien de color al pasar el mouse, facilitando la navegación. -->
+                    <li class="nav-item"><a class="nav-link" href="#tecnologia-funcionamiento">Tecnología</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Arquitectura">Arquitectura</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Interfaz">Interfaz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#posicionamiento">Captura</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#procedimiento">Operación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#soporte">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- 
+    SECCIÓN HERO: 
+    - vh-100: Asegura que cubra el 100% de la altura de la pantalla.
+    - d-flex y align-items-end: Empuja el contenido hacia la parte inferior.
+    -->
+    <header id="inicio" class="hero-section vh-100   d-flex align-items-end pb-5">
+        <div class="container">
+            <div class="row">
+                <!-- 
+                COLUMNA DE TEXTO:
+                - text-start: Alineación a la izquierda estilo Opal.
+                - col-lg-8: Evita que el texto sea demasiado ancho en pantallas grandes.
+                -->
+                <div class="col-lg-8 text-start">
+                    
+                    <!-- TÍTULO PRINCIPAL: Documentado en CSS como .hero-title -->
+                    <h1 class="hero-title">DAKHI</h1>
+
+                    <!-- 
+                    SUBTÍTULO: 
+                    Aquí se corrigió el interlineado (line-height) para evitar que el texto se corte.
+                    -->
+                    <p class="hero-subtitle">
+                        Manual de Usuario <br> 
+                    </p>
+
+                    <!-- BOTÓN DE ACCIÓN -->
+                    <div class="mt-4">
+                        <a href="#procedimiento" class="btn btn-dakhi-opal">Empezar Guía</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        
+        <!-- Sección Tecnología -->
+        <section id="tecnologia-funcionamiento" class="mb-5 pt-4 pb-3 border-top border-secondary">
+            <div class="container px-0">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <span class="text-accent-cyan text-uppercase tracking-wide small fw-bold">El Principio</span>
+                        <h2 class="seccion-titulo text-black mt-1 mb-3">¿Cómo Funciona?</h2>
+                        <p class="small text-black opacity-75 lead mb-0">
+                            El sistema utiliza <strong>espectroscopia de reflectancia</strong>. La luz de 850 nm penetra el tejido subcutáneo; la hemoglobina desoxigenada la absorbe con alta selectividad mientras la dermis la refleja. El sensor óptico traduce de manera inmediata esta diferencia en un mapa visual de alta definición.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bento-card p-4 text-center">
+                            <div class="row g-2">
+                                
+                                <div class="col-4">
+                                    <div class="text-accent-cyan mb-2">
+                                        <i class="fas fa-shield-alt fa-lg"></i>
+                                    </div>
+                                    <div class="bento-subtext text-accent-cyan fw-bold mb-1">PROPIEDAD</div>
+                                    <p class="small m-0 text-white opacity-75">No Invasivo</p>
+                                </div>
+                                
+                                <div class="col-4">
+                                    <div class="text-accent-cyan mb-2">
+                                        <i class="fas fa-stopwatch fa-lg"></i>
+                                    </div>
+                                    <div class="bento-subtext text-accent-cyan fw-bold mb-1">PROCESO</div>
+                                    <p class="small m-0 text-white opacity-75">Tiempo Real</p>
+                                </div>
+                                
+                                <div class="col-4">
+                                    <div class="text-accent-cyan mb-2">
+                                        <i class="fas fa-bullseye fa-lg"></i>
+                                    </div>
+                                    <div class="bento-subtext text-accent-cyan fw-bold mb-1">METRICA</div>
+                                    <p class="small m-0 text-white opacity-75">Precisión</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Arquitectura" class="mb-5 pt-4 pb-3 border-top border-secondary">
+            <div class="container px-0">
+                <div class="text-center mb-4">
+                    <span class="text-accent-cyan text-uppercase tracking-wide small fw-bold">Estructura Física</span>
+                    <h2 class="seccion-titulo text-black mt-1 mb-2">Arquitectura del Sistema</h2>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <h5 class="fw-bold text-white mb-2">Módulo de Control</h5>
+                                <p class="small text-white opacity-75 mb-0">Gestión de potencia conmutada para el arreglo dinámico de LEDs e integración de señales de sincronismo.</p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-2 mt-3">
+                                <span class="bento-subtext opacity-50">Sincronización de Señal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <h5 class="fw-bold text-white mb-2">Sensor CMOS IR</h5>
+                                <p class="small text-white opacity-75 mb-0">Dispositivo óptico modificado internamente con un filtro físico de banda estrecha optimizado para el espectro de 850 nm.</p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-2 mt-3">
+                                <span class="bento-subtext opacity-50">Captura Infrarroja Directa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <h5 class="fw-bold text-white mb-2">Matriz Lumínica</h5>
+                                <p class="small text-white opacity-75 mb-0">LEDs de alta potencia con un ángulo de apertura calibrado matemáticamente para reducir reflexiones ópticas parásitas.</p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-2 mt-3">
+                                <span class="bento-subtext opacity-50">Arreglo de Semiconductores</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Interfaz" class="mb-5 pt-4 pb-2 border-top border-secondary">
+            <div class="container px-0">
+                <div class="text-center mb-4">
+                    <span class="text-accent-cyan text-uppercase tracking-wide small fw-bold">Panel de Control</span>
+                    <h2 class="seccion-titulo text-black mt-1 mb-2">Control de Interfaz Web</h2>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="bento-card prototype-container p-4 d-flex align-items-center justify-content-center text-center">
+                            <div class="prototype-placeholder">
+                                <img src="ruta/tu-imagen-prototipo.jpg" alt="Prototipo DAKHI" class="img-fluid rounded prototype-img mb-2">
+                                <p class="small text-white opacity-50 m-0 font-monospace">Vista General del Prototipo Funcional</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <h5 class="fw-bold text-white mb-2">Control de Luces</h5>
+                                <p class="small text-white opacity-75 mb-3">Gestión de la iluminación Infrarroja y Guía Láser.</p>
+                                <div class="alert bg-deep-bg border-secondary small m-0 text-white-50">
+                                    <strong>Uso:</strong> Active "Auto-Brillo" para calibración automática, o ajuste manualmente la "Intensidad" según la iluminación de la sala.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <h5 class="fw-bold text-white mb-2">Procesamiento de Imagen</h5>
+                                <p class="small text-white opacity-75 mb-3">Ajustes visuales previos al análisis de IA.</p>
+                                <div class="alert bg-deep-bg border-secondary small m-0 text-white-50">
+                                    <strong>Objetivo:</strong> Use "Suavizado de Piel" para reducir el ruido y "Resalte de Venas" para forzar el contraste vascular.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <h5 class="fw-bold text-white mb-2">Modo IA</h5>
+                                <p class="small text-white opacity-75 mb-3">Activación de la red neuronal.</p>
+                                <div class="alert bg-deep-bg border-secondary small m-0 text-white-50">
+                                    <strong>Filtro:</strong> Superpone un marcador verde sobre las venas detectadas para asistir en la punción.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="posicionamiento" class="mb-5 pt-4 pb-2 border-top border-secondary">
+            <div class="container px-0">
+                <div class="bento-card p-4 p-md-5">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-12">
+                            <span class="text-accent-cyan text-uppercase tracking-wide small fw-bold">Ergonomía de Captura</span>
+                            <h2 class="seccion-titulo text-white mt-1 mb-4">Zona de Operación Focal</h2>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <h5 class="fw-bold text-white mb-2">La "Zona Dulce"</h5>
+                                    <p class="small text-white opacity-75 mb-0">Mantenga el sensor a una distancia estricta de <strong>15 a 20 centímetros</strong> sobre el brazo del paciente. Fuera del rango focal, la difracción de la luz impedirá una segmentación correcta.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="fw-bold text-white mb-2">Ángulo de Inclinación</h5>
+                                    <p class="small text-white opacity-75 mb-0">Incline levemente el dispositivo para permitir que la iluminación infrarroja penetre de manera homogénea en las capas profundas de la dermis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="procedimiento" class="mb-5 pt-4 pb-2 border-top border-secondary">
+            <div class="container px-0">
+                <div class="text-center mb-4">
+                    <span class="text-accent-cyan text-uppercase tracking-wide small fw-bold">Protocolo</span>
+                    <h2 class="seccion-titulo text-black mt-1 mb-2">Protocolo de Operación</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                                    <div class="bento-content-wrapper">
+                                        <h5 class="fw-bold text-white mb-2">Paso 1: Posicionamiento y Luz Base</h5>
+                                        <p class="small text-white opacity-75 mb-0">Asegure la distancia de 15 a 20 cm. Active la <strong>Luz Infrarroja</strong>. Use <strong>Auto-Brillo</strong> o ajuste la intensidad manual hasta ver la estructura vascular en pantalla.</p>
+                                    </div>
+                                    <div class="bento-footer border-top border-secondary-subtle pt-2 mt-3">
+                                        <span class="bento-subtext text-white opacity-40">Fase I: Alineación</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                                    <div class="bento-content-wrapper">
+                                        <h5 class="fw-bold text-white mb-2">Paso 2: Procesamiento Manual</h5>
+                                        <p class="small text-white opacity-75 mb-0">Ajuste los controles de <strong>Suavizado de Piel</strong> para reducir texturas y <strong>Resalte de Venas</strong> para mejorar el contraste antes de activar el análisis inteligente.</p>
+                                    </div>
+                                    <div class="bento-footer border-top border-secondary-subtle pt-2 mt-3">
+                                        <span class="bento-subtext text-white opacity-40">Fase II: Optimización</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                                    <div class="bento-content-wrapper">
+                                        <h5 class="fw-bold text-white mb-2">Paso 3: Segmentación IA y Punción</h5>
+                                        <p class="small text-white opacity-75 mb-0">Active el <strong>MODO IA</strong> para visualizar el mapeo verde sobre las venas viables. Encienda la <strong>Guía Láser</strong> para alinear la punción. Al terminar, presione <strong>APAGAR SISTEMA</strong>.</p>
+                                    </div>
+                                    <div class="bento-footer border-top border-secondary-subtle pt-2 mt-3">
+                                        <span class="bento-subtext text-white opacity-40">Fase III: Inferencia</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="soporte" class="mb-5 pt-4 pb-4 border-top border-secondary">
+            <div class="container px-0">
+                <div class="row g-3 align-items-start">
+                    
+                    <div class="col-lg-4">
+                        <h3 class="text-accent-cyan fw-bold mb-3">Resolución de Problemas</h3>
+                        
+                        <div class="bento-card p-3 mb-2">
+                            <h6 class="fw-bold text-white mb-1">Saturación Blanca de la Imagen</h6>
+                            <p class="small text-white opacity-75 mb-0">
+                                <strong>Causa:</strong> Exceso de concentración de luz Infrarroja.<br>
+                                <strong>Solución:</strong> Aumente la distancia al sensor respetando la zona focal o atenúe la potencia lumínica.
+                            </p>
+                        </div>
+
+                        <div class="bento-card p-3">
+                            <h6 class="fw-bold text-white mb-1">Flujo de Video Congelado</h6>
+                            <p class="small text-white opacity-75 mb-0">
+                                <strong>Causa:</strong> Error de comunicación en el puerto serie/USB.<br>
+                                <strong>Solución:</strong> Verifique la conexión física del cable, reinicie el hardware y refresque la interfaz web.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="maintenance-box p-3 p-md-4 h-100">
+                            <h4 class="text-accent-cyan fw-bold mb-3">Mantenimiento Clínico</h4>
+                            <ul class="list-unstyled mb-0 small text-black opacity-75">
+                                <li class="mb-2"><strong>1.</strong> Limpiar el lente del sensor óptico exclusivamente con paños de microfibra secos para remover polvo.</li>
+                                <li class="mb-2"><strong>2.</strong> Evitar la exposición prolongada a la luz solar directa para proteger los filtros de banda estrecha.</li>
+                                <li><strong>3.</strong> Sanitizar la estructura exterior impresa mediante frotado ligero con alcohol isopropílico al 70%.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <h4 class="text-accent-cyan fw-bold mb-3">Marco Regulador</h4>
+                                <p class="small text-white opacity-75 mb-2">
+                                    El diseño considera las normas mexicanas de dispositivos médicos **NOM-241-SSA1-2021** e **ISO 13485**[cite: 86, 113, 114].
+                                </p>
+                                <p class="small text-white opacity-75 mb-0">
+                                    **Protección:** El método y sistema se integran bajo esquema de patente ante el IMPI, resguardando los pesos de la arquitectura **U‑Net** como secreto industrial[cite: 118, 120].
+                                </p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-2 mt-3">
+                                <span class="bento-subtext opacity-50">Validación Institucional e IMPI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>  
+
+        
+    </div>
+
+    <footer class="text-center py-5 opacity-50 border-top border-secondary">
+        <p>&copy; 2026 DAKHI - InnovaTecnm</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

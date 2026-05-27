@@ -1,0 +1,649 @@
+/* ---------------------------------------------------
+    ESTILOS EXCLUSIVOS PARA GUIA 
+   --------------------------------------------------- */
+
+body {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+:root {
+    --primary-red: #e03b35;  /* Color para alertas y seguridad */
+    --accent-cyan: #1CBDB8;  /* Color de acento tecnológico */
+    --dark-blue: #17426d;    /* Azul para contenedores secundarios */
+    --deep-bg: #0a192f;      /* Azul profundo para el fondo principal */
+    --light-gray: #e2e8f0;   /* Gris claro para textos secundarios */
+    --white: #ffffff;
+}
+
+/* 2. CONFIGURACIÓN DEL NAVBAR (TRANSPARENCIA INICIAL) */
+.navbar {
+    /* Transición suave para cuando se aplica el fondo al hacer scroll */
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease;
+    padding-top: 1.1rem; 
+    padding-bottom: 0.8rem;
+
+    z-index: 1000; /* Asegura que esté siempre por encima del Hero */
+}
+
+/* 
+    Clase activada mediante JavaScript al hacer scroll.
+    Proporciona legibilidad sobre el contenido blanco del resto de la página.
+*/
+/* 
+    ESTADO DEL NAVBAR CON DIFUMINADO 
+    Sustituye tu .navbar.scrolled anterior por este código.
+*/
+.navbar.scrolled {
+    /* Color de fondo sólido (el mismo de tu --deep-bg) */
+    background-color: var(--deep-bg) !important; 
+    
+    /* Efecto de vidrio para la parte superior */
+    backdrop-filter: blur(12px); 
+    
+    /* 
+        
+        GRADIENTE DE MÁSCARA:
+        - 'black 60%': Indica que hasta el 60% de la altura de la barra, el color es 100% sólido.
+        - 'transparent 100%': Indica el punto final donde desaparece por completo.
+    */
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 93%, transparent 100%);
+
+    /* Eliminamos bordes para que no se note el corte */
+    border-bottom: none;
+    padding-top: 1.1rem;
+    padding-bottom: 0.8rem;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* 3. SECCIÓN HERO (FONDO PANTALLA COMPLETA) */
+.hero-section {
+    /* 
+        Capa de degradado negro (0.4 de opacidad) sobre la imagen.
+        Esto permite que el texto blanco sea legible sin importar la foto.
+    */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('tu-imagen-dakhi.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Mantiene la imagen estática al bajar */
+    
+    /* 
+        CONTROL DE POSICIÓN DEL TÍTULO:
+        Al aumentar este padding, empujas el texto hacia arriba desde la base.
+    */
+    padding-bottom: 15rem; 
+    border: none;
+    overflow: hidden;
+}
+
+/* 4. ESTILOS DE TIPOGRAFÍA (TÍTULO Y SUBTÍTULO) */
+.hero-title {
+    /* clamp() hace que el texto sea responsivo: min 4rem, ideal 12vw, max 7.5rem */
+    font-size: clamp(4rem, 12vw, 7.5rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -4px; /* Estilo compacto tipo Opal */
+    line-height: 0.85;     /* Interlineado ajustado */
+    margin-bottom: 15px;
+    padding-bottom: 5px;   /* Evita que se corten los trazos bajos de las letras */
+    
+    /* Sombra proyectada para resaltar el texto del fondo */
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+    font-weight: 400;
+    line-height: 1.4; /* Espaciado suficiente para evitar que el texto se pise */
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 580px;  /* Limita el ancho para mantener una lectura cómoda */
+    padding-left: 5px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* 5. BOTÓN PRINCIPAL (ESTILO MINIMALISTA) */
+.btn-dakhi-opal {
+    background-color: var(--white);
+    color: #000000 !important;
+    border-radius: 50px; /* Bordes totalmente redondeados */
+    padding: 14px 32px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-dakhi-opal:hover {
+    background-color: var(--accent-cyan);
+    color: var(--white) !important;
+    transform: translateY(-3px); /* Levanta el botón ligeramente */
+    box-shadow: 0 10px 25px rgba(28, 189, 184, 0.3);
+}
+
+
+/* IGUALAR EL EFECTO HOVER DE LA MARCA CON EL MENÚ
+    - Aplicamos el cambio de color a .navbar-brand para que se comporte
+    igual que los .nav-link.
+*/
+.navbar-brand:hover {
+    /* Usamos el mismo color de acento que los demás elementos */
+    color: rgb(198, 233, 255) !important; 
+    /* Mantenemos la transición suave para que no sea un cambio brusco */
+    transition: color 0.3s ease;
+}
+
+/* TAMAÑO DE LOS ENLACES DEL MENÚ
+    - .navbar-nav .nav-link: Apunta específicamente a los textos del menú. */
+.navbar-nav .nav-link {
+    /* Mínimo 0.9rem, ideal 1vw de la pantalla, máximo 1.2rem */
+    font-size: clamp(0.7rem, 1vw, 0.9rem) !important;/* Tamaño letras  */
+    letter-spacing: 1.2px;         /* Espaciado entre letras para legibilidad */
+    text-transform: uppercase;   /* Mantiene las mayúsculas */
+}
+
+
+.navbar-brand {
+    display: flex !important; /* display: flex: Convierte el enlace en un contenedor flexible. */
+    align-items: center !important; /* align-items: center: Alinea verticalmente todos los hijos al centro real. */
+    gap: 5px; /* Espacio logo y texto */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+.logo-brand {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    object-fit: contain;  /* object-fit: contain: Asegura que la imagen no se deforme. */
+    display: block;
+}
+
+/* 
+    EFECTO AL PASAR EL MOUSE
+*/
+.navbar-brand:hover .logo-brand {
+    transform: scale(1.1); /* Hace que el logo crezca un poco más que el texto */
+    /* Si quiere que la imagen cambie de tono se puede usar filtros:
+        filter: brightness(0) saturate(100%) invert(20%) sepia(90%) ... 
+    */
+}
+
+/* 
+    ESTADO INICIAL DEL LOGO 
+    Asegura que el logo sea blanco o tenga su color original al inicio.
+*/
+.logo-brand {
+    transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+/* 
+    CAMBIO DE COLOR AL HACER SCROLL
+    Cuando el navbar tiene la clase .scrolled, aplicamos un filtro al logo.
+*/
+.navbar.scrolled .logo-brand {
+    /* 
+        EJEMPLO: Convertir a Cian (#1CBDB8) usando filtros.
+        Si tu logo es blanco originalmente, este filtro lo teñirá.
+    */
+    filter: brightness(0) invert(1);
+}
+
+section[id] {
+    scroll-margin-top: 18vh; /* Frena el scroll dejando un 12% de la altura de la pantalla libre *
+    scroll-behavior: smooth; /* Hace que el salto de sección sea fluido y elegante */
+}
+/* =========================================
+    SOPORTE DE ALINEACIÓN BENTO PARA DAKHI
+   ========================================= */
+
+/* Estructura base unificada de tarjetas */
+.bento-card {
+    background: #0a192f !important; /* Forzamos el fondo ultra oscuro de la captura de inspiración */
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border-radius: 8px !important;
+}
+
+/* Envoltura Flex para forzar el estiramiento interno y eliminar espacios muertos */
+.bento-content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Ajustes de Alertas dentro de tarjetas Bento */
+.bg-deep-bg {
+    background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Monospace para los subtextos técnicos inferiores */
+.bento-subtext {
+    font-size: 0.72rem;
+    font-family: monospace, Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+
+/* ---------------------------------------------------
+    ESTILOS PARA DAKHI.HTML 
+   --------------------------------------------------- */
+
+/* 
+    ESTILOS PARA LA PRESENTACIÓN CENTRADA 
+*/
+
+/* Contenedor del logo para darle un efecto de brillo sutil */
+.logo-presentacion {
+    max-width: 150px; /* Tamaño controlado para no romper el centro visual */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    filter: brightness(0) invert(1); /* Mantiene el logo blanco como pediste anteriormente */
+}
+
+
+/* Ajuste del Eslogan para la presentación */
+.hero-eslogan {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--light-gray);
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* 
+    ESPECIFICIDAD PARA LA PRESENTACIÓN
+    Al combinar ambas clases, estas reglas ganan sobre las originales.
+*/
+.hero-section.hero-presentation {
+    padding-bottom: 0 !important; /* Anula el padding del manual para centrar real */
+    display: flex !important; 
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+/* 
+    Asegúrate de que el fondo sea el correcto. 
+    Si quieres una imagen distinta para la presentación, cámbiala aquí:
+*/
+.hero-presentation {
+    background: linear-gradient(#0a192f, rgba(10, 25, 47, 0.8)), 
+                url('tu-fondo-presentacion.jpg') no-repeat center center !important;
+    background-size: cover !important;
+}
+
+/* 
+    
+*/
+.hero-presentation .hero-title-dakhi {
+    /* 1. TIPOGRAFÍA Y PESO */
+    font-size: clamp(5rem, 15vw, 10rem); /* Tamaño masivo y responsivo */
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.8; /* Interlineado muy cerrado para look compacto */
+    
+    /* 2. ESPACIADO EDITORIAL (Tracking) */
+    letter-spacing: -1px; /* Letras muy juntas, estilo moderno */
+    
+    /* 3. COLOR Y MEZCLA */
+    color: var(--white);
+    opacity: 0.95;
+    
+    /* 4. EFECTO DE CAPAS (Opcional) */
+    /* Este efecto hace que el título se sienta integrado con el fondo 
+    mix-blend-mode: overlay; */
+    
+    /* 5. ANIMACIÓN SUTIL */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 
+    SUBTÍTULO / ESLOGAN CON ESTILO DE "BAJADA" EDITORIAL
+*/
+.hero-presentation .hero-eslogan {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 12px; /* Espaciado muy amplio para contrastar con el título */
+    color: var(--accent-cyan);
+    margin-top: 20px;
+    opacity: 0.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria elegante */
+    padding-top: 15px; /* Espacio entre la línea y el texto del eslogan */
+    display: inline-block;
+}
+
+/* 
+    LOGO COMPLEMENTARIO 
+*/
+.hero-presentation .logo-presentacion {
+    margin-top: 10px;
+    max-width: 120px;
+    filter: brightness(0) invert(1); /* Logo en blanco puro */
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.hero-presentation:hover .logo-presentacion {
+    opacity: 1; /* El logo cobra vida al interactuar con la sección */
+}
+
+
+/* =========================================
+    ESTILOS: CONTEXTO CLÍNICO (DAKHI.HTML)
+   ========================================= */
+
+/* Tipografía de títulos de sección */
+.seccion-titulo {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+/* Subtítulos pequeños arriba de los títulos (Ej: "El Desafío") */
+.tracking-wide {
+    letter-spacing: 3px;
+}
+
+/* TARJETAS DE ESTADÍSTICAS (Estilo Glassmorphism)
+    - background: Fondo semi-transparente muy oscuro.
+    - backdrop-filter: Difumina ligeramente lo que haya detrás (si usas imagen de fondo).
+    - border: Un borde súper fino y transparente para dar relieve.
+*/
+.stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(28, 189, 184, 0.3); /* Brillo cian en el borde al pasar el mouse */
+}
+
+/* Números Gigantes de las estadísticas */
+.stat-number {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+/* Color Cian (Por si no tienes la clase de utilidad text-accent-cyan) */
+.text-accent-cyan {
+    color: var(--accent-cyan, #1CBDB8) !important;
+}
+
+/* CAJA DE IMPACTO CLÍNICO (Callout) 
+    Usa un fondo rojo extremadamente sutil con una línea lateral
+    para indicar que es información crítica o de riesgo.
+*/
+    .impacto-clinico-box {
+        background: rgba(130, 29, 39, 0.267); /* Rojo muy transparente */
+        border-left: 3px solid #dc3545;      /* Línea indicadora roja */
+        border-radius: 0 8px 8px 0;
+    }
+
+    /* ETIQUETAS MÉDICAS (Badges) 
+        Transforma los términos en "píldoras" visuales para lectura rápida.
+    */
+    .badge-riesgo {
+        background: rgba(220, 53, 69, 0.15);
+        color: #ff6b6b; /* Un rojo claro que contraste bien en fondos oscuros */
+        border: 1px solid rgba(220, 53, 69, 0.3);
+        padding: 8px 12px;
+        font-weight: 500;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        border-radius: 6px;
+    }
+
+    /* SECCIÓN CON FONDO DINÁMICO */
+    .contexto-clinico-section {
+        position: relative;
+        width: 100%; 
+        /*  min-height: 100vh; Ocupa al menos toda la altura de la pantalla */
+        display: flex;
+        align-items: center;
+        
+        /* Imagen base */
+        background-image: url('Imagenes/accesovascularR.jpg'); 
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Efecto de desplazamiento elegante */
+        
+        transition: background-image 0.8s ease-in-out;
+        overflow: hidden;
+
+        z-index: 1; /*(donde se coloca el fondo)*/ 
+    }
+
+    /* CAPA OSCURA (OVERLAY)
+        Asegura que el texto blanco sea siempre legible sobre las imágenes.
+    */
+    .contexto-clinico-section::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(10, 25, 47, 0.50); /* (x,x,x,opacidad)*/
+        z-index: -1;
+    }
+
+    /* Cursor para indicar que se puede hacer clic */
+    .clickable-bg {
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .clickable-bg:hover {
+        filter: brightness(1.2);
+        transform: translateY(-2px);
+    }
+
+    /* =========================================
+   ESTILOS: BENTO-GRID EDITORIAL (INSPIRADO)
+   ========================================= */
+
+/* Estructura de la tarjeta contenedora */
+
+#tecnologia {
+    background-color: hsl(0, 0%, 100%); /* Un tono más oscuro que las tarjetas para generar contraste */
+    position: relative;
+    width: 100%;
+}
+.bento-card {
+    background: #0a192f; /* Fondo ultra oscuro idéntico a la imagen */
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Título Gigante de la primera columna (Estilo MVF) */
+.bento-giant-title {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -3px;
+    color: #ffffff;
+    line-height: 0.9;
+}
+
+/* Círculo de marca/identidad de la segunda columna (Estilo Context) */
+.bento-icon-circle {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Subtextos de los pies de las tarjetas */
+.bento-subtext {
+    font-size: 0.75rem;
+    font-family: monospace; /* Estilo código/técnico como la imagen */
+    letter-spacing: 0.5px;
+}
+
+/* Indicadores de color para simular las comillas de la captura */
+.quote-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    margin-right: 6px;
+}
+.indicator-pink   { background-color: #d63384; }
+.indicator-yellow { background-color: #ffc107; }
+.indicator-blue   { background-color: #0d6efd; }
+.indicator-cyan   { background-color: #1cbdb8; }
+
+/* Resaltados de palabras en el texto (Inline Highlights) */
+.highlight-pink {
+    color: #ff69b4;
+    font-weight: 600;
+}
+
+.highlight-purple {
+    color: #b19ffb;
+    font-weight: 600;
+}
+
+/* El contenedor del texto crece proporcionalmente para ocupar el espacio central */
+.bento-content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el texto verticalmente dentro del espacio disponible */
+}
+
+/* Ajuste fino del título masivo para equilibrar la caja */
+.bento-giant-title {
+    margin-top: 5px;
+    line-height: 0.85;
+}
+
+
+
+/* =========================================
+   VARIANTE: ICONOS GRANDES CENTRADOS
+   ========================================= */
+
+/* Contenedor del icono grande */
+.bento-icon-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px; /* Altura fija para que los títulos queden alineados horizontalmente */
+    width: 100%;
+}
+
+/* Forzar a la envoltura flex a centrar sus elementos secundarios en el eje horizontal */
+.bento-card.text-center .bento-content-wrapper {
+    align-items: center;
+    text-align: center;
+}
+
+/* Asegura que la línea del footer ocupe todo el ancho interno a pesar del centrado */
+.bento-card .bento-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra también los elementos del pie de página */
+}
+
+/* =========================================
+   ESTILOS: SECCIÓN FUNCIONAMIENTO DAKHI
+   ========================================= */
+
+#funcionamiento {
+    background-color: #1cafaf; /* Mantiene la consistencia de fondo oscuro */
+}
+
+/* Contenedor específico para la imagen del prototipo */
+.prototype-container {
+    background: #0d0f14;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    min-height: 250px;
+}
+
+/* Control responsivo de la imagen del prototipo para que no se deforme */
+.prototype-img {
+    max-height: 400px;
+    object-fit: contain;
+    width: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Indicadores numéricos minimalistas inspirados en diseño técnico */
+.step-number-badge {
+    font-family: monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1cbdb8; /* Color cian de acento */
+    background: rgba(28, 189, 184, 0.08);
+    border: 1px solid rgba(28, 189, 184, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Resaltado de palabras clave del proceso */
+.highlight-cyan {
+    color: #1cbdb8;
+    font-weight: 600;
+}
+
+/* =========================================
+   ESTILOS: ENLACE EDITORIAL (INFOGRAFÍA)
+   ========================================= */
+
+.infografia-link-wrapper {
+    border-top: 1px dashed rgba(255, 255, 255, 0.07); /* Línea punteada muy sutil para separar */
+    display: inline-block;
+    width: 100%;
+}
+
+.tech-link-editorial {
+    color: var(--deep-bg, #1cbdb8);
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Efecto Hover: Línea sutil abajo y cambio de opacidad */
+.tech-link-editorial:hover {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.tech-link-editorial i {
+    transition: transform 0.3s ease;
+}
+
+/* Pequeña animación para el icono de salida al pasar el cursor */
+.tech-link-editorial:hover i {
+    transform: translate(2px, -2px);
+}

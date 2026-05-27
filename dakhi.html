@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAKHI</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter (Estilo InfiniteYay) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Importación de Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-dakhi" data-bs-offset="100">
+
+    <!-- 
+    NAVBAR TRANSPARENTE:
+    - fixed-top: Posiciona la barra sobre el header (Hero).
+    - bg-transparent: Elimina el color de fondo inicial.
+    - navbar-dark: Ajusta los textos para que sean legibles sobre fondos oscuros.
+    -->
+    <nav id="navbar-dakhi" class="navbar navbar-expand-lg fixed-top bg-transparent navbar-dark">  <!-- navbar-dark: se genera el efecto de iluminacion -->
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="dakhi.html"> <!-- la clase navbar-brand: Es la clase del "Logo" o "Marca" -->
+                <img src="Imagenes\logoSVG.svg" 
+                    alt="Logo DAKHI" 
+                    width="50" 
+                    height="30" 
+                    class="d-inline-block align-center me-2 logo-brand">
+                DAKHI
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase small fw-bold">
+                    <li class="nav-item"><a class="nav-link" href="#presentacion">Inicio</a></li> 
+                    <!-- navbar-link: Son enlaces de navegación estándar. Bootstrap diseñó la clase navbar-dark específicamente para que estos cambien de color al pasar el mouse, facilitando la navegación. -->
+                    <li class="nav-item"><a class="nav-link" href="#contexto-clinico">Contexto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tecnologia">Tecnología</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#impacto-valor">Ejes de Impacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#funcionamiento">Funcionamiento</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+        HERO SECTION CENTRADA:
+        - d-flex align-items-center: Centra el contenido verticalmente en toda la pantalla (vh-100).
+        - text-center: Alinea todos los textos y elementos al eje central.
+    -->
+    <header id="presentacion" class="hero-section hero-presentation vh-100 d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    
+                    <h1 class="hero-title-dakhi mb-2">DAKHI</h1>
+                    <p class="hero-eslogan mb-4">
+                        "Ojo y Sangre" 
+                    </p>
+                    <!-- 
+                        mt-1 = ~4px
+                        mt-2 = ~8px
+                        mt-3 = ~16px
+                        mt-4 = ~24px
+                        mt-5 = ~48px
+                    -->
+                    <div class="logo-presentacion-container">
+                        <img src="Imagenes\logoSVG.svg" 
+                            alt="Logo DAKHI" 
+                            class="img-fluid logo-presentacion" 
+                            style="max-width: 180px;">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+        <!-- Sección Tecnología -->
+        <section id="contexto-clinico" class="contexto-clinico-section py-1">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    
+                    <div class="col-lg-6 text-start pe-lg-5 mb-5 mb-lg-0">
+                        <span class="text-accent-cyan text-uppercase tracking-wide small fw-bold">El Desafío</span>
+                        <h2 class="seccion-titulo text-white mb-4 mt-2">Acceso Vascular Difícil</h2>
+                        
+                        <p class="seccion-texto text-white opacity-75 lead">
+                            El acceso vascular periférico es el procedimiento invasivo más frecuente en el entorno hospitalario. Sin embargo, su efectividad se ve fuertemente comprometida por la complejidad anatómica de la población mexicana.
+                        </p>
+                        
+                        <div class="impacto-clinico-box mt-4 p-4">
+                            <h4 class="text-white text-uppercase small fw-bold mb-3 tracking-wide">
+                                <i class="fas fa-exclamation-circle me-2"></i>Consecuencias del Acceso Difícil
+                            </h4>
+                            
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge badge-riesgo clickable-bg text-white" data-bg="Imagenes/tisularR.jpg">Trauma Tisular</span>
+                            <span class="badge badge-riesgo clickable-bg text-white" data-bg="Imagenes/hematomaR.jpg">Hematomas</span>
+                            <span class="badge badge-riesgo clickable-bg text-white" data-bg="Imagenes/flebitisR.jpg">Riesgo de Flebitis</span>
+                            </div>
+                        
+                        <p class="seccion-texto text-white opacity-75 mb-0 small">
+                            Impacto directo en pacientes geriátricos y pediátricos.
+                        </p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="stat-card p-4 h-100">
+                                    <h3 class="stat-number text-accent-cyan mb-2">75.2%</h3>
+                                    <p class="stat-label mb-0 text-white opacity-60 small">
+                                        De los adultos en México vive con sobrepeso u obesidad, dificultando la visualización vascular.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="stat-card p-4 h-100">
+                                    <h3 class="stat-number text-danger mb-2">40%</h3>
+                                    <p class="stat-label mb-0 text-white opacity-60 small">
+                                        Tasa de fallo en el primer intento debido a la alta prevalencia de pacientes con acceso venoso difícil.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnologia -->
+        <section id="tecnologia" class="mb-4 pt-4 pb-5 border-top border-secondary">
+            <div class="container px-0">
+                
+                <div class="text-center mb-4">
+                    <span class="text-accent-cyan text-uppercase tracking-wide small fw-bold">El Núcleo</span>
+                    <h2 class="seccion-titulo text-black mt-1 mb-2">Tecnología del Sistema</h2>
+                </div>
+
+                <div class="row g-3">
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="bento-card bento-card-main p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <h3 class="bento-giant-title mb-2">U‑NET</h3>
+                                <p class="small text-white opacity-75 mb-0">
+                                    Implementamos modelos de aprendizaje profundo para el procesamiento de imágenes infrarrojas. El sistema genera un mapa digital que supera por completo las limitations del ojo humano.
+                                </p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-3 mt-4">
+                                <span class="quote-indicator indicator-pink"></span>
+                                <span class="bento-subtext text-white opacity-50">Segmentación Vascular en Tiempo Real</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <div class="d-flex align-items-center mb-3">
+                                    <span class="bento-icon-circle me-2">λ</span>
+                                    <h4 class="fw-bold text-white m-0">850 nm</h4>
+                                </div>
+                                <p class="small text-white opacity-75 mb-0">
+                                    Sustituimos los sistemas ópticos convencionales por un arreglo de LEDs y sensores de alta sensibilidad. Su longitud de onda aprovecha la absorción de la hemoglobina para discriminar tejido de forma automática.
+                                </p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-3 mt-4">
+                                <span class="quote-indicator indicator-yellow"></span>
+                                <span class="bento-subtext text-white opacity-50">Filtro Óptico de Alta Sensibilidad</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="row g-3 h-100">
+                            
+                            <div class="col-12">
+                                <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                                    <p class="small text-white opacity-75 mb-3">
+                                        "La integración de un apuntador láser permite guiar la punción con mayor exactitud, logrando que el personal clínico pueda <span class="highlight-pink">identificar con certeza</span> la zona de abordaje."
+                                    </p>
+                                    <div class="bento-footer border-top border-secondary-subtle pt-2">
+                                        <span class="quote-indicator indicator-blue"></span>
+                                        <span class="bento-subtext text-white opacity-50">Guía Lumínica Externa</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                                    <p class="small text-white opacity-75 mb-3">
+                                        Como solución modular, reduce drásticamente el uso de insumos desechables y residuos punzocortantes, promoviendo una <span class="highlight-purple">práctica clínica sustentable</span> y responsable.
+                                    </p>
+                                    <div class="bento-footer border-top border-secondary-subtle pt-2">
+                                        <span class="quote-indicator indicator-cyan"></span>
+                                        <span class="bento-subtext text-white opacity-50">Arquitectura de Alta Durabilidad</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+<!-- 
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="bento-card prototype-container p-4">
+                            <div class="row g-4 align-items-center">
+                                
+                                <div class="col-md-6 border-end-md border-secondary-subtle">
+                                    <div class="prototype-placeholder text-center p-2">
+                                        <img src="Imagenes/interfaz.png" alt="Interfaz Gráfica DAKHI" class="img-fluid rounded prototype-img mb-2">
+                                        <p class="small text-white opacity-50 m-0 font-monospace">Prototipo</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="prototype-placeholder text-center p-2">
+                                        <img src="Imagenes/prototipo_fisico.png" alt="Hardware Prototipo DAKHI" class="img-fluid rounded prototype-img mb-2">
+                                        <p class="small text-white opacity-50 m-0 font-monospace">Dispositivo Físico</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+-->
+            </div>
+        </section>
+
+        <!-- Sección: impacto-valor -->
+        <section id="impacto-valor" class="mb-5 pt-4 pb-4 border-top border-secondary">
+            <div class="container px-0">
+                
+                <div class="text-center mb-4">
+                    <span class="text-accent-cyan text-uppercase tracking-wide small fw-bold">El Valor</span>
+                    <h2 class="seccion-titulo text-black mt-1 mb-2">Ejes de Impacto</h2>
+                </div>
+
+                <div class="row g-3">
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between text-center">
+                            <div class="bento-content-wrapper align-items-center">
+                                <div class="bento-icon-large text-accent-cyan mb-3">
+                                    <i class="fas fa-users fa-3x"></i>
+                                </div>
+                                <h5 class="fw-bold text-white mb-2">Inclusión y Equidad</h5>
+                                <p class="small text-white opacity-75 mb-0">
+                                    Desarrollamos una solución de bajo costo diseñada específicamente para el sector público (Secretaría de Salud, IMSS, ISSSTE). Facilitamos el acceso a tecnología médica avanzada en entornos de alta demanda clínica.
+                                </p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-3 mt-4 w-100">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between text-center">
+                            <div class="bento-content-wrapper align-items-center">
+                                <div class="bento-icon-large text-accent-cyan mb-3">
+                                    <i class="fas fa-leaf fa-3x"></i>
+                                </div>
+                                <h5 class="fw-bold text-white mb-2">Sustentabilidad</h5>
+                                <p class="small text-white opacity-75 mb-0">
+                                    Disminuimos drásticamente el uso de insumos médicos desechables y la generación de residuos punzocortantes derivados de los intentos fallidos de punción. Promovemos una práctica clínica responsable.
+                                </p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-3 mt-4 w-100">
+                        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between text-center">
+                            <div class="bento-content-wrapper align-items-center">
+                                <div class="bento-icon-large text-accent-cyan mb-3">
+                                    <i class="fas fa-heart fa-3x"></i>
+                                </div>
+                                <h5 class="fw-bold text-white mb-2">Beneficios al Paciente</h5>
+                                <p class="small text-white opacity-75 mb-0">
+                                    Reducimos el dolor, el trauma tisular y la ansiedad del paciente durante el proceso de canalización. Optimizamos los tiempos de atención para ofrecer una experiencia hospitalaria más digna.
+                                </p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-3 mt-4 w-100">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="funcionamiento" class="mb-5 pt-4 pb-5 border-top border-secondary">
+            <div class="container px-0">
+                
+                <div class="text-center mb-4">
+                    <p></p>
+                    <h2 class="seccion-titulo text-white mt-1 mb-2">¿Cómo Funciona DAKHI?</h2>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="bento-card prototype-container p-4 d-flex align-items-center justify-content-center text-center">
+                            <div class="prototype-placeholder">
+                                <img src="Imagenes/interfaz.png" alt="Prototipo DAKHI" class="img-fluid rounded prototype-img mb-2">
+                                <p class="small text-white opacity-50 m-0 font-monospace">Interfaz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="step-number-badge me-2">01</div>
+                                    <h5 class="fw-bold text-white m-0">Emisión e Iluminación</h5>
+                                </div>
+                                <p class="small text-white opacity-75 mb-0">
+                                    El arreglo de LEDs emite luz infrarroja a <span class="highlight-cyan">850 nm</span> sobre la piel. La hemoglobina desoxigenada absorbe la luz, generando un contraste natural en el tejido subcutáneo.
+                                </p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-3 mt-4">
+                                <span class="quote-indicator indicator-cyan"></span>
+                                <span class="bento-subtext text-white opacity-50">Fase Óptica</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="step-number-badge me-2">02</div>
+                                    <h5 class="fw-bold text-white m-0">Procesamiento por IA</h5>
+                                </div>
+                                <p class="small text-white opacity-75 mb-0">
+                                    La cámara capta el reflejo óptico y envía el video al núcleo de inteligencia artificial. La red <span class="highlight-pink">U‑Net</span> aísla y delimita los vasos sanguíneos frame a frame.
+                                </p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-3 mt-4">
+                                <span class="quote-indicator indicator-pink"></span>
+                                <span class="bento-subtext text-white opacity-50">Inferencia en Tiempo Real</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="bento-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div class="bento-content-wrapper">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="step-number-badge me-2">03</div>
+                                    <h5 class="fw-bold text-white m-0">Guía y Proyección</h5>
+                                </div>
+                                <p class="small text-white opacity-75 mb-0">
+                                    El sistema despliega el mapa vascular segmentado en la pantalla y activa la <span class="highlight-purple">guía láser</span> física, indicando el punto idóneo para el abordaje clínico.
+                                </p>
+                            </div>
+                            <div class="bento-footer border-top border-secondary-subtle pt-3 mt-4">
+                                <span class="quote-indicator indicator-yellow"></span>
+                                <span class="bento-subtext text-white opacity-50">Asistencia de Precisión</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <div class="infografia-link-wrapper pt-2">
+                            <p class="small text-white opacity-20 mb-2">¿Buscas más información?</p>
+                            <a href="Imagenes/infografia .pdf" target="_blank" class="tech-link-editorial">
+                                Infografía de Funcionamiento <i class="fas fa-arrow-up-right-from-square ms-1 small"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+
+
+    <footer class="text-center py-5 opacity-50 border-top border-secondary">
+        <p>&copy; 2026 DAKHI - InnovaTecnm</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
