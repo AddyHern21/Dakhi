@@ -63,8 +63,8 @@ body {
         Capa de degradado negro (0.4 de opacidad) sobre la imagen.
         Esto permite que el texto blanco sea legible sin importar la foto.
     */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('tu-imagen-dakhi.jpg') no-repeat center center;
+    background: linear-gradient(rgba(2, 32, 151, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('Imagenes/dakhi-prototipo.jpeg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed; /* Mantiene la imagen estática al bajar */
     
@@ -271,7 +271,7 @@ section[id] {
 */
 .hero-presentation {
     background: linear-gradient(#0a192f, rgba(10, 25, 47, 0.8)), 
-                url('tu-fondo-presentacion.jpg') no-repeat center center !important;
+                url('Imagenes\dakhi-prototipo.jpeg') no-repeat center center !important;
     background-size: cover !important;
 }
 
